@@ -1,0 +1,141 @@
+---
+---
+<div class="payment-form bg-white p-6 rounded-lg shadow-lg">
+  <h3 class="text-2xl font-semibold mb-6">Payment Details</h3>
+  
+  <form id="payment-form" class="space-y-4">
+    <div class="mb-4">
+      <label class="block text-gray-700 mb-2" for="amount">Amount (USD)</label>
+      <input 
+        type="number" 
+        id="amount" 
+        min="1"
+        step="0.01"
+        required
+        class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none"
+      />
+    </div>
+
+    <div class="mb-4">
+      <label class="block text-gray-700 mb-2" for="card-element">Credit or Debit Card</label>
+      <div 
+        id="card-element" 
+        class="w-full px-4 py-3 rounded-lg border border-gray-300 bg-white"
+      ></div>
+      <div id="card-errors" class="text-red-500 text-sm mt-2"></div>
+    </div>
+
+    <button 
+      type="submit" 
+      id="submit-button"
+      class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors relative overflow-hidden group"
+    >
+      <span class="relative z-10">Pay Now</span>
+      <div class="absolute bottom-0 left-0 w-full h-full bg-blue-700 transform origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></div>
+      <div class="absolute bottom-0 left-0 w-0 h-1 bg-white transition-all duration-300" id="payment-progress"></div>
+    </button>
+  </form>
+</div>
+
+<script>
+  import { loadStripe } from '@stripe/stripe-js';
+
+  // Replace with your Stripe publishable key
+  const stripePromise = loadStripe('your_publishable_key');
+
+  let elements;
+  let stripe;
+
+  async function initialize() {
+    stripe = await stripePromise;
+    elements = stripe.elements();
+
+    const cardElement = elements.create('card', {
+      style: {
+        base: {
+          fontSize: '16px',
+          color: '#32325d',
+          '::placeholder': {
+            color: '#aab7c4'
+          }
+        },
+        invalid: {
+          color: '#fa755a',
+          iconColor: '#fa755a'
+        }
+      }
+    });
+
+    cardElement.mount('#card-element');
+    cardElement.on('change', showCardErrors);
+  }
+
+  function showCardErrors(event) {
+    const displayError = document.getElementById('card-errors');
+    if (event.error) {
+      displayError.textContent = event.error.message;
+    } else {
+      displayError.textContent = '';
+    }
+  }
+
+  const form = document.getElementById('payment-form');
+  const submitButton = document.getElementById('submit-button');
+  const progressBar = document.getElementById('payment-progress');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+
+    if (!stripe || !elements) {
+      console.error('Stripe not initialized');
+      return;
+    }
+
+    // Disable form submission
+    if (submitButton) {
+      submitButton.disabled = true;
+    }
+
+    // Show progress
+    if (progressBar) {
+      progressBar.style.width = '50%';
+    }
+
+    const amount = parseFloat(
+      (document.getElementById('amount') as HTMLInputElement).value
+    );
+
+    try {
+      // Here you would typically make an API call to your backend to:
+      // 1. Create a payment intent
+      // 2. Get the client secret
+      // For demo purposes, we'll just simulate the API call
+      await new Promise(resolve => setTimeout(resolve, 1000));
+
+      // Show success state
+      if (progressBar) {
+        progressBar.style.width = '100%';
+      }
+      
+      alert('Payment simulation successful! Integrate with your payment provider API.');
+      form.reset();
+    } catch (error) {
+      console.error('Payment failed:', error);
+      const errorElement = document.getElementById('card-errors');
+      if (errorElement) {
+        errorElement.textContent = 'Payment failed. Please try again.';
+      }
+    } finally {
+      // Re-enable form submission
+      if (submitButton) {
+        submitButton.disabled = false;
+      }
+      // Reset progress
+      if (progressBar) {
+        progressBar.style.width = '0';
+      }
+    }
+  });
+
+  initialize();
+</script>

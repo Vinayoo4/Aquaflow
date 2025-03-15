@@ -1,0 +1,50 @@
+---
+---
+<div class="custom-cursor"></div>
+
+<style>
+  .custom-cursor {
+    width: 20px;
+    height: 20px;
+    background: rgba(0, 102, 204, 0.3);
+    border: 2px solid #0066cc;
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transition: transform 0.2s ease;
+    transform: translate(-50%, -50%);
+  }
+
+  .custom-cursor.hover {
+    transform: translate(-50%, -50%) scale(1.5);
+    background: rgba(0, 102, 204, 0.1);
+  }
+</style>
+
+<script>
+  import Lenis from '@studio-freight/lenis';
+  
+  // Initialize smooth scroll
+  const lenis = new Lenis();
+  
+  function raf(time) {
+    lenis.raf(time);
+    requestAnimationFrame(raf);
+  }
+  
+  requestAnimationFrame(raf);
+
+  // Custom cursor
+  const cursor = document.querySelector('.custom-cursor');
+  
+  document.addEventListener('mousemove', (e) => {
+    cursor.style.left = e.clientX + 'px';
+    cursor.style.top = e.clientY + 'px';
+  });
+
+  document.querySelectorAll('a, button').forEach(element => {
+    element.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+    element.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+  });
+</script>

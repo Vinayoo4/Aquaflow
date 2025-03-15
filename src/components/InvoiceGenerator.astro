@@ -1,0 +1,77 @@
+---
+---
+<div class="invoice-form bg-white p-6 rounded-lg shadow-lg">
+  <h3 class="text-2xl font-semibold mb-6">Generate Invoice</h3>
+  <form id="invoiceForm" class="space-y-4">
+    <div>
+      <label class="block text-gray-700 mb-2" for="customerName">Customer Name</label>
+      <input type="text" id="customerName" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" required />
+    </div>
+    <div>
+      <label class="block text-gray-700 mb-2" for="waterQuantity">Water Quantity (Liters)</label>
+      <input type="number" id="waterQuantity" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" required />
+    </div>
+    <div>
+      <label class="block text-gray-700 mb-2" for="deliveryDate">Delivery Date</label>
+      <input type="date" id="deliveryDate" class="w-full px-4 py-2 rounded-lg border border-gray-300 focus:border-primary focus:ring-2 focus:ring-primary/20 outline-none" required />
+    </div>
+    <button type="submit" class="w-full bg-primary text-white px-6 py-3 rounded-lg hover:bg-blue-700 transition-colors">
+      Generate Invoice
+    </button>
+  </form>
+</div>
+
+<script>
+  import easyinvoice from 'easyinvoice';
+  import { v4 as uuidv4 } from 'uuid';
+
+  const form = document.getElementById('invoiceForm');
+
+  form?.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const customerName = (document.getElementById('customerName') as HTMLInputElement).value;
+    const waterQuantity = (document.getElementById('waterQuantity') as HTMLInputElement).value;
+    const deliveryDate = (document.getElementById('deliveryDate') as HTMLInputElement).value;
+    
+    const pricePerLiter = 2; // Price in your currency
+    const total = parseInt(waterQuantity) * pricePerLiter;
+
+    const data = {
+      images: {
+        logo: "https://public.easyinvoice.cloud/img/logo_en_original.png",
+      },
+      sender: {
+        company: "AquaFlow Water Supply",
+        address: "123 Water Street",
+        city: "Watertown",
+        country: "USA"
+      },
+      client: {
+        company: customerName,
+        address: "Client Address",
+        city: "Client City",
+        country: "Client Country"
+      },
+      information: {
+        number: uuidv4(),
+        date: deliveryDate,
+      },
+      products: [
+        {
+          quantity: waterQuantity,
+          description: "Purified Water Supply",
+          "tax-rate": 0,
+          price: pricePerLiter
+        }
+      ],
+      "bottom-notice": "Thank you for choosing AquaFlow Water Supply!",
+      settings: {
+        currency: "USD",
+      },
+    };
+
+    const result = await easyinvoice.createInvoice(data);
+    easyinvoice.download(`invoice-${data.information.number}.pdf`, result.pdf);
+  });
+</script>

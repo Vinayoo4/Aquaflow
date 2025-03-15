@@ -1,0 +1,111 @@
+---
+const navItems = [
+  { name: 'Home', href: '/' },
+  { name: 'About', href: '/about' },
+  { name: 'Services', href: '/#services' },
+  { name: 'Contact', href: '/#contact' }
+];
+---
+
+<nav class="fixed w-full bg-white/80 backdrop-blur-md z-50 py-4">
+  <div class="container mx-auto px-4">
+    <div class="flex justify-between items-center">
+      <a href="/" class="text-2xl font-bold text-primary relative overflow-hidden group">
+        <span class="relative z-10">AquaFlow</span>
+        <div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
+        <div class="absolute top-0 left-0 w-full h-full bg-primary/10 transform -skew-x-12 -translate-x-full transition-transform duration-500 group-hover:translate-x-0"></div>
+      </a>
+      
+      <div class="hidden md:flex space-x-8">
+        {navItems.map(item => (
+          <a 
+            href={item.href} 
+            class="text-gray-600 hover:text-primary transition-all duration-300 relative group overflow-hidden py-2"
+          >
+            <span class="relative z-10 inline-block transform transition-transform duration-300 group-hover:-translate-y-1">{item.name}</span>
+            <div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
+            <div class="absolute top-0 left-0 w-full h-full bg-primary/10 transform -skew-x-12 -translate-x-full transition-transform duration-500 group-hover:translate-x-0"></div>
+          </a>
+        ))}
+      </div>
+
+      <button id="mobileMenuBtn" class="md:hidden relative group">
+        <div class="w-6 h-6 flex flex-col justify-center items-center">
+          <span class="w-full h-0.5 bg-gray-600 transition-all duration-300 transform origin-center group-hover:bg-primary"></span>
+          <span class="w-full h-0.5 bg-gray-600 my-1.5 transition-all duration-300 transform origin-center group-hover:bg-primary"></span>
+          <span class="w-full h-0.5 bg-gray-600 transition-all duration-300 transform origin-center group-hover:bg-primary"></span>
+        </div>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden absolute top-full left-0 w-full bg-white/95 backdrop-blur-md transform transition-all duration-300 opacity-0 -translate-y-4">
+    <div class="container mx-auto px-4 py-4">
+      {navItems.map((item, index) => (
+        <a 
+          href={item.href} 
+          class="block py-2 text-gray-600 hover:text-primary transition-all duration-300 relative overflow-hidden group transform translate-y-2 opacity-0"
+          style={`transition-delay: ${index * 100}ms`}
+        >
+          <span class="relative z-10 inline-block transform transition-transform duration-300 group-hover:translate-x-2">{item.name}</span>
+          <div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary transform origin-left scale-x-0 transition-transform duration-300 group-hover:scale-x-100"></div>
+        </a>
+      ))}
+    </div>
+  </div>
+</nav>
+
+<script>
+  const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  const menuItems = mobileMenu?.querySelectorAll('a');
+  let isOpen = false;
+
+  function toggleMenu(open: boolean) {
+    if (!mobileMenu || !mobileMenuBtn) return;
+    
+    isOpen = open;
+    
+    // Toggle menu visibility
+    mobileMenu.classList.toggle('hidden', !open);
+    
+    // Animate menu container
+    setTimeout(() => {
+      mobileMenu.style.opacity = open ? '1' : '0';
+      mobileMenu.style.transform = open ? 'translateY(0)' : 'translateY(-1rem)';
+    }, 0);
+
+    // Animate menu items
+    menuItems?.forEach((item, index) => {
+      setTimeout(() => {
+        item.style.transform = open ? 'translateY(0)' : 'translateY(0.5rem)';
+        item.style.opacity = open ? '1' : '0';
+      }, open ? index * 100 : 0);
+    });
+
+    // Animate hamburger
+    const spans = mobileMenuBtn.querySelectorAll('span');
+    spans[0].style.transform = open ? 'rotate(45deg) translate(5px, 5px)' : '';
+    spans[1].style.opacity = open ? '0' : '1';
+    spans[2].style.transform = open ? 'rotate(-45deg) translate(5px, -5px)' : '';
+  }
+
+  mobileMenuBtn?.addEventListener('click', () => {
+    toggleMenu(!isOpen);
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (isOpen && !mobileMenu?.contains(e.target as Node) && !mobileMenuBtn?.contains(e.target as Node)) {
+      toggleMenu(false);
+    }
+  });
+
+  // Close menu when clicking on a link
+  menuItems?.forEach(item => {
+    item.addEventListener('click', () => {
+      toggleMenu(false);
+    });
+  });
+</script>

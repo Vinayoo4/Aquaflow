@@ -1,0 +1,165 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import CustomCursor from '../components/CustomCursor.astro';
+import WaterAnimation from '../components/WaterAnimation.astro';
+---
+
+<Layout title="About Us - AquaFlow">
+  <CustomCursor />
+  <Navbar />
+  <WaterAnimation />
+
+  <main class="pt-20">
+    <!-- Hero Section -->
+    <section class="py-20 relative overflow-hidden">
+      <div class="container mx-auto px-4">
+        <div class="max-w-3xl mx-auto text-center">
+          <h1 class="text-5xl font-bold text-secondary mb-6">Our Story</h1>
+          <p class="text-xl text-gray-600 mb-8">
+            Delivering pure water and exceptional service since 2010
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="py-16 bg-white/80 backdrop-blur-md">
+      <div class="container mx-auto px-4">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+          <div>
+            <h2 class="text-3xl font-bold text-secondary mb-6">Our Mission</h2>
+            <p class="text-gray-600 mb-4">
+              At AquaFlow, we're committed to providing the purest water supply solutions while maintaining the highest standards of quality and service. Our mission is to ensure every household and business has access to clean, safe, and great-tasting water.
+            </p>
+            <p class="text-gray-600">
+              We believe that quality water is fundamental to good health and well-being. That's why we invest in state-of-the-art purification systems and rigorous quality control processes.
+            </p>
+          </div>
+          <div class="relative">
+            <div class="aspect-square rounded-full bg-blue-100/50 backdrop-blur-sm p-8 relative overflow-hidden group hover:bg-blue-200/50 transition-all">
+              <div class="absolute inset-0 bg-gradient-to-br from-blue-100/20 to-transparent"></div>
+              <div class="h-full w-full rounded-full border-2 border-blue-200 flex items-center justify-center">
+                <span class="text-7xl">💧</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Values Section -->
+    <section class="py-16 bg-gradient-to-b from-white/50 to-blue-50/50 backdrop-blur-md">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-secondary mb-12 text-center">Our Values</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          {[
+            {
+              title: "Quality",
+              description: "We never compromise on the quality of our water and service delivery.",
+              icon: "⭐"
+            },
+            {
+              title: "Sustainability",
+              description: "Committed to environmental responsibility in all our operations.",
+              icon: "🌱"
+            },
+            {
+              title: "Reliability",
+              description: "Consistent and timely delivery you can always count on.",
+              icon: "🎯"
+            }
+          ].map(value => (
+            <div class="p-6 rounded-xl bg-white/80 backdrop-blur-sm hover:bg-white transition-all transform hover:-translate-y-1 hover:shadow-lg">
+              <div class="text-4xl mb-4">{value.icon}</div>
+              <h3 class="text-xl font-semibold mb-2 text-secondary">{value.title}</h3>
+              <p class="text-gray-600">{value.description}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <!-- Process Section -->
+    <section class="py-16 bg-white/80 backdrop-blur-md">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-secondary mb-12 text-center">Our Process</h2>
+        <div class="max-w-4xl mx-auto">
+          <div class="space-y-8">
+            {[
+              {
+                step: "1",
+                title: "Source Selection",
+                description: "We carefully select the purest water sources that meet our strict quality standards."
+              },
+              {
+                step: "2",
+                title: "Purification",
+                description: "Our advanced multi-stage purification process ensures the highest water quality."
+              },
+              {
+                step: "3",
+                title: "Quality Testing",
+                description: "Rigorous testing at every stage guarantees consistent water quality."
+              },
+              {
+                step: "4",
+                title: "Delivery",
+                description: "Prompt and professional delivery service right to your doorstep."
+              }
+            ].map(process => (
+              <div class="flex gap-6 items-start group">
+                <div class="w-12 h-12 rounded-full bg-primary text-white flex items-center justify-center flex-shrink-0 group-hover:scale-110 transition-transform">
+                  {process.step}
+                </div>
+                <div>
+                  <h3 class="text-xl font-semibold mb-2 text-secondary">{process.title}</h3>
+                  <p class="text-gray-600">{process.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Team Section -->
+    <section class="py-16 bg-gradient-to-b from-blue-50/50 to-white/50 backdrop-blur-md">
+      <div class="container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-secondary mb-12 text-center">Our Team</h2>
+        <div class="grid md:grid-cols-4 gap-8">
+          {[
+            {
+              name: "John Smith",
+              role: "CEO",
+              image: "👨‍💼"
+            },
+            {
+              name: "Sarah Johnson",
+              role: "Operations Manager",
+              image: "👩‍💼"
+            },
+            {
+              name: "Mike Wilson",
+              role: "Quality Control",
+              image: "👨‍🔬"
+            },
+            {
+              name: "Emily Brown",
+              role: "Customer Relations",
+              image: "👩‍💼"
+            }
+          ].map(member => (
+            <div class="text-center group">
+              <div class="w-32 h-32 rounded-full bg-blue-100/50 mx-auto mb-4 flex items-center justify-center text-5xl group-hover:scale-110 transition-transform">
+                {member.image}
+              </div>
+              <h3 class="text-xl font-semibold text-secondary mb-1">{member.name}</h3>
+              <p class="text-gray-600">{member.role}</p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  </main>
+</Layout>

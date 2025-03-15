@@ -1,0 +1,186 @@
+---
+---
+<div class="water-container">
+  <div class="tap">
+    <div class="tap-body"></div>
+    <div class="tap-head"></div>
+    <div class="water-stream">
+      <div class="droplet"></div>
+      <div class="droplet"></div>
+      <div class="droplet"></div>
+    </div>
+  </div>
+  <div class="water"></div>
+  <div class="ripples">
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+    <div class="ripple"></div>
+  </div>
+</div>
+
+<style>
+  .water-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: -1;
+    overflow: hidden;
+  }
+
+  .tap {
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .tap-body {
+    width: 40px;
+    height: 60px;
+    background: linear-gradient(145deg, #555, #333);
+    border-radius: 5px;
+    box-shadow: inset -2px -2px 4px rgba(0,0,0,0.3);
+  }
+
+  .tap-head {
+    width: 60px;
+    height: 20px;
+    background: linear-gradient(145deg, #444, #222);
+    position: absolute;
+    top: 40px;
+    left: -10px;
+    border-radius: 0 0 10px 10px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.2);
+  }
+
+  .water-stream {
+    position: absolute;
+    top: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 8px;
+    height: 0;
+    background: linear-gradient(to bottom, rgba(0, 102, 204, 0.8), rgba(0, 102, 204, 0.4));
+    animation: stream 2s forwards;
+    filter: url(#turbulence);
+  }
+
+  .droplet {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: rgba(0, 102, 204, 0.6);
+    border-radius: 50%;
+    animation: droplet 1s infinite;
+  }
+
+  .droplet:nth-child(2) {
+    animation-delay: 0.3s;
+  }
+
+  .droplet:nth-child(3) {
+    animation-delay: 0.6s;
+  }
+
+  .water {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 0;
+    background: linear-gradient(to bottom, 
+      rgba(0, 102, 204, 0.3),
+      rgba(0, 102, 204, 0.1)
+    );
+    animation: fill 3s ease-out forwards;
+    backdrop-filter: blur(5px);
+  }
+
+  .ripples {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .ripple {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(0, 102, 204, 0.4);
+    border-radius: 50%;
+    animation: ripple 2s infinite;
+    bottom: 20%;
+  }
+
+  .ripple:nth-child(2) {
+    animation-delay: 0.5s;
+    left: 45%;
+  }
+
+  .ripple:nth-child(3) {
+    animation-delay: 1s;
+    left: 55%;
+  }
+
+  @keyframes stream {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    10% {
+      opacity: 1;
+    }
+    100% {
+      height: 100vh;
+      opacity: 0.8;
+    }
+  }
+
+  @keyframes droplet {
+    0% {
+      transform: translateY(0) scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(100px) scale(0);
+      opacity: 0;
+    }
+  }
+
+  @keyframes fill {
+    0% {
+      height: 0;
+      opacity: 0;
+    }
+    50% {
+      opacity: 0.5;
+    }
+    100% {
+      height: 100%;
+      opacity: 0.3;
+    }
+  }
+
+  @keyframes ripple {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+    100% {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+</style>
+
+<svg width="0" height="0">
+  <filter id="turbulence" x="0" y="0" width="100%" height="100%">
+    <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="2" seed="1"/>
+    <feDisplacementMap in="SourceGraphic" scale="5"/>
+  </filter>
+</svg>

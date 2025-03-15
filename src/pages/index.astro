@@ -1,0 +1,111 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import CustomCursor from '../components/CustomCursor.astro';
+import WaterAnimation from '../components/WaterAnimation.astro';
+import InvoiceGenerator from '../components/InvoiceGenerator.astro';
+import ContactForm from '../components/ContactForm.astro';
+import PaymentForm from '../components/PaymentForm.astro';
+---
+
+
+
+
+<Layout>
+  <CustomCursor />
+  <Navbar />
+  <WaterAnimation />
+  
+  <!-- Hero Section -->
+  <section class="min-h-screen flex items-center relative overflow-hidden">
+    <div class="absolute w-full h-full">
+      <div class="absolute w-64 h-64 rounded-full bg-blue-200/30 -top-20 -left-20 blur-3xl"></div>
+      <div class="absolute w-64 h-64 rounded-full bg-blue-300/20 bottom-0 right-0 blur-3xl"></div>
+    </div>
+    
+    <div class="container mx-auto px-4 py-20 relative">
+      <div class="max-w-3xl">
+        <h1 class="text-5xl md:text-7xl font-bold text-secondary mb-6 relative overflow-hidden">
+          Pure Water, <br/>
+          <span class="text-primary relative">
+            Delivered Fresh
+            <div class="absolute bottom-0 left-0 w-full h-0.5 bg-primary"></div>
+          </span>
+        </h1>
+        <p class="text-xl text-gray-600 mb-8">
+          Premium water supply solutions for homes and businesses. 
+          Experience the difference of pure, fresh water delivered right to your doorstep.
+        </p>
+        <a 
+          href="#contact" 
+          class="bg-primary text-white px-8 py-4 rounded-full text-lg font-medium hover:bg-blue-700 transition-all relative overflow-hidden group inline-block"
+        >
+          <span class="relative z-10">Get Started</span>
+          <div class="absolute bottom-0 left-0 w-full h-full bg-blue-700 transform origin-left scale-x-0 transition-transform duration-500 group-hover:scale-x-100"></div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-20 bg-white/80 backdrop-blur-md">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 text-secondary">Our Services</h2>
+      <div class="grid md:grid-cols-3 gap-8">
+        {[
+          {
+            title: 'Home Delivery',
+            description: 'Regular water delivery service for homes with flexible scheduling options.',
+            icon: '🏠'
+          },
+          {
+            title: 'Business Supply',
+            description: 'Bulk water supply solutions for offices, restaurants, and industrial facilities.',
+            icon: '🏢'
+          },
+          {
+            title: 'Water Testing',
+            description: 'Professional water quality testing and certification services.',
+            icon: '🧪'
+          }
+        ].map(service => (
+          <div class="p-6 rounded-xl bg-blue-50/50 backdrop-blur-sm hover:bg-blue-100/50 transition-all transform hover:-translate-y-1 hover:shadow-lg">
+            <div class="text-4xl mb-4">{service.icon}</div>
+            <h3 class="text-xl font-semibold mb-2 text-secondary">{service.title}</h3>
+            <p class="text-gray-600">{service.description}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Invoice Section -->
+  <section id="invoice" class="py-20 bg-white/80 backdrop-blur-md">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 text-secondary">Generate Invoice</h2>
+      <div class="max-w-xl mx-auto">
+        <InvoiceGenerator />
+      </div>
+    </div>
+  </section>
+
+  <!-- Payment Section -->
+  <section id="payment" class="py-20 bg-white/80 backdrop-blur-md">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 text-secondary">Make a Payment</h2>
+      <div class="max-w-xl mx-auto">
+        <PaymentForm />
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-20 bg-white/80 backdrop-blur-md">
+    <div class="container mx-auto px-4">
+      <h2 class="text-4xl font-bold text-center mb-16 text-secondary">Contact Us</h2>
+      <div class="max-w-xl mx-auto">
+        <ContactForm />
+      </div>
+    </div>
+  </section>
+</Layout>
