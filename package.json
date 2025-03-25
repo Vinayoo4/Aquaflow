@@ -1,0 +1,27 @@
+{
+  "name": "@example/basics",
+  "type": "module",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "@astrojs/tailwind": "^5.1.0",
+    "@emailjs/browser": "^4.1.0",
+    "@stripe/stripe-js": "^2.4.0",
+    "@studio-freight/lenis": "^1.0.34",
+    "astro": "^5.2.5",
+    "easyinvoice": "^3.0.47",
+    "gsap": "^3.12.5",
+    "jspdf": "^2.5.1",
+    "tailwindcss": "^3.4.1",
+    "uuid": "^9.0.1"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
