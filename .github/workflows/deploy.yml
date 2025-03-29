@@ -20,7 +20,7 @@ jobs:
         run: npm run build
 
       # Step4 : Deploy to GitHub Pages
-      - name: Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages 
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
