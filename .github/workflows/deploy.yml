@@ -1,10 +1,31 @@
-name: Deploy to Main Directory
+name: Deploy to GitHub Pages
 on:
   push:
     branches:
       - main
   workflow_dispatch:
 jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      # Step1: Checkout code
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      # Step2 : Install dependencies
+      - name: Install dependencies
+        run: npm install
+      #Step 3 : Build project
+      - name: Build project
+        run: npm run build
+
+      # Step4 : Deploy to GitHub Pages
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist # Ensure this matches your build output directory
+         
   build:
     runs-on: ubuntu-latest
     steps:
