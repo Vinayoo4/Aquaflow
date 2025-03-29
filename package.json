@@ -10,6 +10,7 @@
     "astro": "astro"
   },
   "dependencies": {
+    "@astrojs/check": "^0.9.4",
     "@astrojs/tailwind": "^5.1.0",
     "@emailjs/browser": "^4.1.0",
     "@stripe/stripe-js": "^2.4.0",
@@ -19,9 +20,11 @@
     "gsap": "^3.12.5",
     "jspdf": "^2.5.1",
     "tailwindcss": "^3.4.1",
+    "typescript": "^5.8.2",
     "uuid": "^9.0.1"
   },
   "devDependencies": {
+    "@types/uuid": "^10.0.0",
     "gh-pages": "^6.3.0"
   }
 }

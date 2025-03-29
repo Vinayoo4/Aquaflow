@@ -28,7 +28,7 @@
   // Initialize smooth scroll
   const lenis = new Lenis();
   
-  function raf(time) {
+  function raf(time : number) {
     lenis.raf(time);
     requestAnimationFrame(raf);
   }
@@ -36,15 +36,19 @@
   requestAnimationFrame(raf);
 
   // Custom cursor
-  const cursor = document.querySelector('.custom-cursor');
+  const cursor = document.querySelector('.custom-cursor') as HTMLElement;
   
+  if (cursor) {
+    // update cursor position on mouse move
   document.addEventListener('mousemove', (e) => {
     cursor.style.left = e.clientX + 'px';
     cursor.style.top = e.clientY + 'px';
   });
 
+  // Add hover effect to links and buttons
   document.querySelectorAll('a, button').forEach(element => {
     element.addEventListener('mouseenter', () => cursor.classList.add('hover'));
     element.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
   });
+}
 </script>

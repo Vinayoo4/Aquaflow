@@ -1,9 +1,8 @@
----
----
 <div class="payment-form bg-white p-6 rounded-lg shadow-lg">
   <h3 class="text-2xl font-semibold mb-6">Payment Details</h3>
   
   <form id="payment-form" class="space-y-4">
+    <!-- Amount Input -->
     <div class="mb-4">
       <label class="block text-gray-700 mb-2" for="amount">Amount (USD)</label>
       <input 
@@ -16,6 +15,7 @@
       />
     </div>
 
+    <!-- Card Input -->
     <div class="mb-4">
       <label class="block text-gray-700 mb-2" for="card-element">Credit or Debit Card</label>
       <div 
@@ -25,6 +25,7 @@
       <div id="card-errors" class="text-red-500 text-sm mt-2"></div>
     </div>
 
+    <!-- Submit Button -->
     <button 
       type="submit" 
       id="submit-button"
@@ -38,17 +39,26 @@
 </div>
 
 <script>
-  import { loadStripe } from '@stripe/stripe-js';
+  import { loadStripe, type Stripe, type StripeElements } from '@stripe/stripe-js';
+  import type { StripeElementChangeEvent } from '@stripe/stripe-js';
 
   // Replace with your Stripe publishable key
   const stripePromise = loadStripe('your_publishable_key');
 
-  let elements;
-  let stripe;
+  let elements: StripeElements;
+  let stripe: Stripe;
 
+  /**
+   * Initialize Stripe and mount the card element
+   */
   async function initialize() {
-    stripe = await stripePromise;
-    elements = stripe.elements();
+    const stripeInstance = await stripePromise;
+    if (!stripeInstance) {
+      alert('Failed to initialize payment system. Please try again later.');
+      throw new Error('Stripe failed to initialize.');
+    }
+    stripe = stripeInstance;
+    elements = stripe.elements({});
 
     const cardElement = elements.create('card', {
       style: {
@@ -70,20 +80,30 @@
     cardElement.on('change', showCardErrors);
   }
 
-  function showCardErrors(event) {
+  /**
+   * Display card errors in the UI
+   * @param {StripeElementChangeEvent} event - The event triggered by card element changes
+   */
+  function showCardErrors(event: StripeElementChangeEvent) {
     const displayError = document.getElementById('card-errors');
-    if (event.error) {
-      displayError.textContent = event.error.message;
-    } else {
-      displayError.textContent = '';
+    if (displayError) {
+      displayError.textContent = event.error ? event.error.message : '';
     }
   }
 
-  const form = document.getElementById('payment-form');
-  const submitButton = document.getElementById('submit-button');
-  const progressBar = document.getElementById('payment-progress');
+  // Get form and button elements
+const form = document.getElementById('payment-form') as HTMLFormElement;
+const submitButton = document.getElementById('submit-button') as HTMLButtonElement;
+const progressBar = document.getElementById('payment-progress') as HTMLElement;
 
-  form?.addEventListener('submit', async (event) => {
+// Ensure required elements exist before proceeding
+if (!form || !submitButton || !progressBar) {
+  console.error('Required elements are missing from the DOM.');
+} else {
+  /**
+   * Handle form submission
+   */
+  form.addEventListener('submit', async (event) => {
     event.preventDefault();
 
     if (!stripe || !elements) {
@@ -92,33 +112,18 @@
     }
 
     // Disable form submission
-    if (submitButton) {
-      submitButton.disabled = true;
-    }
+    submitButton.disabled = true;
 
     // Show progress
-    if (progressBar) {
-      progressBar.style.width = '50%';
-    }
-
-    const amount = parseFloat(
-      (document.getElementById('amount') as HTMLInputElement).value
-    );
+    progressBar.style.width = '50%';
 
     try {
-      // Here you would typically make an API call to your backend to:
-      // 1. Create a payment intent
-      // 2. Get the client secret
-      // For demo purposes, we'll just simulate the API call
+      // Simulate API call to create a payment intent
       await new Promise(resolve => setTimeout(resolve, 1000));
 
       // Show success state
-      if (progressBar) {
-        progressBar.style.width = '100%';
-      }
-      
+      progressBar.style.width = '100%';
       alert('Payment simulation successful! Integrate with your payment provider API.');
-      form.reset();
     } catch (error) {
       console.error('Payment failed:', error);
       const errorElement = document.getElementById('card-errors');
@@ -127,15 +132,16 @@
       }
     } finally {
       // Re-enable form submission
-      if (submitButton) {
-        submitButton.disabled = false;
-      }
+      submitButton.disabled = false;
+
       // Reset progress
-      if (progressBar) {
-        progressBar.style.width = '0';
-      }
+      progressBar.style.width = '0';
+
+      // Reset form
+      form.reset();
     }
   });
-
+}
+  // Initialize Stripe on page load
   initialize();
 </script>
