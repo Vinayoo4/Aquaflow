@@ -1,48 +1,32 @@
-# Astro Starter Kit: Basics
+# SALTEDHASH PWA MVP
 
-```sh
-npm create astro@latest -- --template basics
-```
+A progressive web application MVP built for the Natural Living & Urban Gardening product line. This system provides a full-stack content-commerce structure utilizing Vue 3, Vite, and Express, powered by a local JSON file-based storage architecture.
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/withastro/astro/tree/latest/examples/basics)
-[![Open with CodeSandbox](https://assets.codesandbox.io/github/button-edit-lime.svg)](https://codesandbox.io/p/sandbox/github/withastro/astro/tree/latest/examples/basics)
-[![Open in GitHub Codespaces](https://github.com/codespaces/badge.svg)](https://codespaces.new/withastro/astro?devcontainer_path=.devcontainer/basics/devcontainer.json)
+## Architecture
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+- **Frontend:** Vue 3 + Vite, Vue Router, Pinia (State Management), TailwindCSS.
+- **PWA Capabilities:** App shell routing, Service Worker with caching (offline support), `manifest.webmanifest`.
+- **Backend:** Express API, JWT authentication with bcrypt hashing.
+- **Storage:** JSON flat-files (NoSQL local storage) under the `/data` folder.
 
-![just-the-basics](https://github.com/withastro/astro/assets/2244813/a0a5533c-a856-4198-8470-2d67b1d7c554)
+## Setup & Running Locally
 
-## 🚀 Project Structure
+1. **Install Dependencies:**
+   - From the root, install backend and frontend dependencies.
 
-Inside of your Astro project, you'll see the following folders and files:
+2. **Seed Initial Data:**
+   - Pre-populate JSON storage with admin and member demo accounts, along with test content.
+   - Run `npm run seed` in the backend folder.
+   - **Demo Admin:** admin@saltedhash.com / admin123
+   - **Demo Member:** member@example.com / member123
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src/
-│   ├── layouts/
-│   │   └── Layout.astro
-│   └── pages/
-│       └── index.astro
-└── package.json
-```
+3. **Start the Application:**
+   - **Backend Server:** Run `npm run start` in the backend. The API runs on `http://localhost:3000`.
+   - **Frontend App:** Serve the frontend via vite. The UI runs on `http://localhost:5173`.
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+## Deployment
 
-## 🧞 Commands
-
-All commands are run from the root of the project, from a terminal:
-
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
-
-## 👀 Want to learn more?
-
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+To deploy this application:
+1. Build the frontend.
+2. Configure the Express backend to serve the `/frontend/dist` directory as static files (this requires modifying `backend/src/server.ts` to serve the dist directory in a production environment).
+3. Ensure the deployment environment allows read/write file system access for the `/data` directory.
