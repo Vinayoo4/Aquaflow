@@ -1,0 +1,14 @@
+[
+  {
+    "id": "tier-1",
+    "name": "Urban Gardening Club",
+    "description": "Access to premium gardening guides and community.",
+    "price": 9.99,
+    "features": [
+      "Premium Guides",
+      "Monthly QA"
+    ],
+    "createdAt": "2026-05-26T12:15:17.144Z",
+    "updatedAt": "2026-05-26T12:15:17.145Z"
+  }
+]

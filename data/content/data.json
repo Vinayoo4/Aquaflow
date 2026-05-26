@@ -1,0 +1,37 @@
+[
+  {
+    "id": "29b7f852-2cc6-442d-922f-d6f3a8bf2a9a",
+    "type": "guide",
+    "title": "Getting Started with Balcony Tomatoes",
+    "slug": "getting-started-balcony-tomatoes",
+    "excerpt": "Learn the basics of growing tomatoes in small spaces.",
+    "body": "Tomatoes need plenty of sunlight. Start with a 5-gallon container...",
+    "tags": [
+      "gardening",
+      "tomatoes",
+      "urban"
+    ],
+    "isPublished": true,
+    "publishedAt": "2026-05-26T12:15:17.374Z",
+    "requiredTierId": null,
+    "createdAt": "2026-05-26T12:15:17.374Z",
+    "updatedAt": "2026-05-26T12:15:17.374Z"
+  },
+  {
+    "id": "2e09291c-3b52-447e-9500-cec6e060895e",
+    "type": "guide",
+    "title": "Advanced Pruning Techniques",
+    "slug": "advanced-pruning-techniques",
+    "excerpt": "Maximize your yield with proper pruning.",
+    "body": "Identify suckers and remove them early in the season...",
+    "tags": [
+      "gardening",
+      "advanced"
+    ],
+    "isPublished": true,
+    "publishedAt": "2026-05-26T12:15:17.375Z",
+    "requiredTierId": "tier-1",
+    "createdAt": "2026-05-26T12:15:17.375Z",
+    "updatedAt": "2026-05-26T12:15:17.375Z"
+  }
+]

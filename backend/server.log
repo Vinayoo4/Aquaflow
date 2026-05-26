@@ -1,0 +1,154 @@
+
+> backend@1.0.0 dev
+> nodemon src/server.ts
+
+[33m[nodemon] 3.1.14[39m
+[33m[nodemon] to restart at any time, enter `rs`[39m
+[33m[nodemon] watching path(s): *.*[39m
+[33m[nodemon] watching extensions: ts,json[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+Server running on port 3000
+Terminated
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+Server running on port 3000
+[32m[nodemon] clean exit - waiting for changes before restart[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+/app/backend/node_modules/path-to-regexp/src/index.ts:218
+          throw new PathError(`Missing parameter name at index ${index}`, str);
+                ^
+PathError [TypeError]: Missing parameter name at index 1: *; visit https://git.new/pathToRegexpError for info
+    at consumeUntil (/app/backend/node_modules/path-to-regexp/src/index.ts:218:17)
+    at parse (/app/backend/node_modules/path-to-regexp/src/index.ts:262:24)
+    at process (/app/backend/node_modules/path-to-regexp/src/index.ts:466:52)
+    at pathToRegexp (/app/backend/node_modules/path-to-regexp/src/index.ts:478:3)
+    at Object.match (/app/backend/node_modules/path-to-regexp/src/index.ts:416:28)
+    at matcher (/app/backend/node_modules/router/lib/layer.js:86:23)
+    at new Layer (/app/backend/node_modules/router/lib/layer.js:93:62)
+    at Function.route (/app/backend/node_modules/router/index.js:428:17)
+    at Function.route (/app/backend/node_modules/express/lib/application.js:257:22)
+    at Function.app.<computed> [as get] (/app/backend/node_modules/express/lib/application.js:478:22) {
+  originalPath: '*'
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+/app/backend/node_modules/path-to-regexp/src/index.ts:218
+          throw new PathError(`Missing parameter name at index ${index}`, str);
+                ^
+PathError [TypeError]: Missing parameter name at index 2: /*; visit https://git.new/pathToRegexpError for info
+    at consumeUntil (/app/backend/node_modules/path-to-regexp/src/index.ts:218:17)
+    at parse (/app/backend/node_modules/path-to-regexp/src/index.ts:262:24)
+    at process (/app/backend/node_modules/path-to-regexp/src/index.ts:466:52)
+    at pathToRegexp (/app/backend/node_modules/path-to-regexp/src/index.ts:478:3)
+    at Object.match (/app/backend/node_modules/path-to-regexp/src/index.ts:416:28)
+    at matcher (/app/backend/node_modules/router/lib/layer.js:86:23)
+    at new Layer (/app/backend/node_modules/router/lib/layer.js:93:62)
+    at Function.route (/app/backend/node_modules/router/index.js:428:17)
+    at Function.route (/app/backend/node_modules/express/lib/application.js:257:22)
+    at Function.app.<computed> [as get] (/app/backend/node_modules/express/lib/application.js:478:22) {
+  originalPath: '/*'
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+/app/backend/node_modules/path-to-regexp/src/index.ts:245
+        throw new PathError(`Unexpected ${value} at index ${index - 1}`, str);
+              ^
+PathError [TypeError]: Unexpected ( at index 1: /(.*); visit https://git.new/pathToRegexpError for info
+    at consumeUntil (/app/backend/node_modules/path-to-regexp/src/index.ts:245:15)
+    at parse (/app/backend/node_modules/path-to-regexp/src/index.ts:262:24)
+    at process (/app/backend/node_modules/path-to-regexp/src/index.ts:466:52)
+    at pathToRegexp (/app/backend/node_modules/path-to-regexp/src/index.ts:478:3)
+    at Object.match (/app/backend/node_modules/path-to-regexp/src/index.ts:416:28)
+    at matcher (/app/backend/node_modules/router/lib/layer.js:86:23)
+    at new Layer (/app/backend/node_modules/router/lib/layer.js:93:62)
+    at Function.route (/app/backend/node_modules/router/index.js:428:17)
+    at Function.route (/app/backend/node_modules/express/lib/application.js:257:22)
+    at Function.app.<computed> [as get] (/app/backend/node_modules/express/lib/application.js:478:22) {
+  originalPath: '/(.*)'
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+/app/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/server.ts(30,11): error TS1135: Argument expression expected.
+
+    at createTSError (/app/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/app/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/app/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/app/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/app/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1838:10
+    at Object.require.extensions.<computed> [as .ts] (/app/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 1135 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+Server running on port 3000
+ (/app/backend/node_modules/path-to-regexp/src/index.ts:218:17)
+    at parse (/app/backend/node_modules/path-to-regexp/src/index.ts:262:24)
+    at process (/app/backend/node_modules/path-to-regexp/src/index.ts:466:52)
+    at pathToRegexp (/app/backend/node_modules/path-to-regexp/src/index.ts:478:3)
+    at Object.match (/app/backend/node_modules/path-to-regexp/src/index.ts:416:28)
+    at matcher (/app/backend/node_modules/router/lib/layer.js:86:23)
+    at new Layer (/app/backend/node_modules/router/lib/layer.js:93:62)
+    at Function.route (/app/backend/node_modules/router/index.js:428:17)
+    at Function.route (/app/backend/node_modules/express/lib/application.js:257:22)
+    at Function.app.<computed> [as get] (/app/backend/node_modules/express/lib/application.js:478:22) {
+  originalPath: '/*'
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+/app/backend/node_modules/path-to-regexp/src/index.ts:245
+        throw new PathError(`Unexpected ${value} at index ${index - 1}`, str);
+              ^
+PathError [TypeError]: Unexpected ( at index 1: /(.*); visit https://git.new/pathToRegexpError for info
+    at consumeUntil (/app/backend/node_modules/path-to-regexp/src/index.ts:245:15)
+    at parse (/app/backend/node_modules/path-to-regexp/src/index.ts:262:24)
+    at process (/app/backend/node_modules/path-to-regexp/src/index.ts:466:52)
+    at pathToRegexp (/app/backend/node_modules/path-to-regexp/src/index.ts:478:3)
+    at Object.match (/app/backend/node_modules/path-to-regexp/src/index.ts:416:28)
+    at matcher (/app/backend/node_modules/router/lib/layer.js:86:23)
+    at new Layer (/app/backend/node_modules/router/lib/layer.js:93:62)
+    at Function.route (/app/backend/node_modules/router/index.js:428:17)
+    at Function.route (/app/backend/node_modules/express/lib/application.js:257:22)
+    at Function.app.<computed> [as get] (/app/backend/node_modules/express/lib/application.js:478:22) {
+  originalPath: '/(.*)'
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+/app/backend/node_modules/ts-node/src/index.ts:859
+    return new TSError(diagnosticText, diagnosticCodes, diagnostics);
+           ^
+TSError: ⨯ Unable to compile TypeScript:
+src/server.ts(30,11): error TS1135: Argument expression expected.
+
+    at createTSError (/app/backend/node_modules/ts-node/src/index.ts:859:12)
+    at reportTSError (/app/backend/node_modules/ts-node/src/index.ts:863:19)
+    at getOutput (/app/backend/node_modules/ts-node/src/index.ts:1077:36)
+    at Object.compile (/app/backend/node_modules/ts-node/src/index.ts:1433:41)
+    at Module.m._compile (/app/backend/node_modules/ts-node/src/index.ts:1617:30)
+    at node:internal/modules/cjs/loader:1838:10
+    at Object.require.extensions.<computed> [as .ts] (/app/backend/node_modules/ts-node/src/index.ts:1621:12)
+    at Module.load (node:internal/modules/cjs/loader:1441:32)
+    at Function._load (node:internal/modules/cjs/loader:1263:12)
+    at TracingChannel.traceSync (node:diagnostics_channel:328:14) {
+  diagnosticCodes: [ 1135 ]
+}
+[31m[nodemon] app crashed - waiting for file changes before starting...[39m
+[32m[nodemon] restarting due to changes...[39m
+[32m[nodemon] starting `ts-node src/server.ts`[39m
+Server running on port 3000
+[32m[nodemon] clean exit - waiting for changes before restart[39m

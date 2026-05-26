@@ -1,0 +1,24 @@
+[
+  {
+    "id": "61d4e8ff-4bfc-4ad2-8ab5-671461cdb068",
+    "email": "admin@saltedhash.com",
+    "passwordHash": "$2b$10$dxuJpOfdjN.yPB38PvAYHOPjxReXnETvu5XnIVMpFffl4FgOT4IL6",
+    "role": "admin",
+    "firstName": "Admin",
+    "lastName": "User",
+    "tierId": null,
+    "createdAt": "2026-05-26T12:15:17.268Z",
+    "updatedAt": "2026-05-26T12:15:17.268Z"
+  },
+  {
+    "id": "41b04be4-eb76-496f-8cca-555d816a582a",
+    "email": "member@example.com",
+    "passwordHash": "$2b$10$/cmNUdXvO4TbBHmwLXwYBOrgsq.qXGXhY9mEZtVok3Hcln6ER.L9S",
+    "role": "member",
+    "firstName": "Sample",
+    "lastName": "Member",
+    "tierId": "tier-1",
+    "createdAt": "2026-05-26T12:15:17.374Z",
+    "updatedAt": "2026-05-26T12:15:17.374Z"
+  }
+]
