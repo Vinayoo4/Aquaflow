@@ -11,15 +11,25 @@ const router = createRouter({
     { path: '/plans', name: 'Plans', component: () => import('../pages/Plans.vue'), meta: { requiresAuth: true } },
     { path: '/downloads', name: 'Downloads', component: () => import('../pages/Downloads.vue') },
     { path: '/admin', name: 'Admin', component: () => import('../pages/Admin.vue'), meta: { requiresAdmin: true } },
+    { path: '/saved', name: 'Saved', component: () => import('../pages/Saved.vue'), meta: { requiresAuth: true } },
+    { path: '/community', name: 'Community', component: () => import('../pages/Community.vue') },
+    { path: '/membership', name: 'Membership', component: () => import('../pages/Membership.vue'), meta: { requiresAuth: true } },
+    { path: '/403', name: 'Forbidden', component: { template: '<div class="text-center py-12"><h1 class="text-4xl mb-4">403</h1><p class="mb-4">Access Denied.</p><router-link to="/" class="text-emerald-600 underline">Go Home</router-link></div>' } },
+    { path: '/offline', name: 'Offline', component: { template: '<div class="text-center py-12"><h1 class="text-4xl mb-4">You are offline.</h1><p class="mb-4">Check your connection.</p><router-link to="/saved" class="text-emerald-600 underline">View Saved Content</router-link></div>' } }
   ],
 });
 
 router.beforeEach((to, _from, next) => {
   const auth = useAuthStore();
-  if (to.meta.requiresAuth && !auth.isAuthenticated) {
+
+  const requiresAuth = to.meta.requiresAuth || to.meta.requiresAdmin || to.meta.requiresMember;
+
+  if (requiresAuth && !auth.isLoggedIn) {
     next('/login');
-  } else if (to.meta.requiresAdmin && (!auth.isAuthenticated || auth.user?.role !== 'admin')) {
-    next('/');
+  } else if (to.meta.requiresAdmin && !auth.isAdmin) {
+    next('/403');
+  } else if (to.meta.requiresMember && !auth.isMember) {
+    next('/403');
   } else {
     next();
   }

@@ -1,1 +1,22 @@
-[]
+[
+  {
+    "id": "calendar",
+    "title": "Gardening Calendar PDF",
+    "description": "A year-round printable calendar for your garden.",
+    "fileType": "pdf",
+    "fileSize": 102400,
+    "requiredTierId": null,
+    "createdAt": "2026-05-31T12:16:03.563Z",
+    "updatedAt": "2026-05-31T12:16:03.563Z"
+  },
+  {
+    "id": "template",
+    "title": "Meal Prep Template",
+    "description": "A printable weekly meal prep worksheet.",
+    "fileType": "pdf",
+    "fileSize": 51200,
+    "requiredTierId": "premium-tier-id",
+    "createdAt": "2026-05-31T12:16:03.564Z",
+    "updatedAt": "2026-05-31T12:16:03.564Z"
+  }
+]

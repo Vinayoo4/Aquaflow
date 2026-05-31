@@ -1,1 +1,36 @@
-[]
+[
+  {
+    "id": "9a09e20b-7303-4321-a3d6-a670273910ab",
+    "title": "Best tips for aphids?",
+    "body": "I am seeing a lot of aphids on my roses. Any natural remedies?",
+    "authorId": "81a7692a-b9a9-4298-9283-c85013355257",
+    "replies": [
+      {
+        "id": "0e39f52a-eae0-4bd8-8fea-a2ff15cecc52",
+        "body": "Neem oil works wonders!",
+        "authorId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+        "createdAt": "2026-05-31T12:16:03.564Z"
+      }
+    ],
+    "replyCount": 1,
+    "createdAt": "2026-05-31T12:16:03.564Z",
+    "updatedAt": "2026-05-31T12:16:03.564Z"
+  },
+  {
+    "id": "1b9dc6ad-1acf-44de-a9e9-4ff8c41c9ce1",
+    "title": "What to plant in October?",
+    "body": "Getting ready for fall gardening. Suggestions?",
+    "authorId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "replies": [
+      {
+        "id": "c3685eb5-6df6-4482-ab60-bd0c0bd56b7c",
+        "body": "Garlic and onions are great right now.",
+        "authorId": "81a7692a-b9a9-4298-9283-c85013355257",
+        "createdAt": "2026-05-31T12:16:03.564Z"
+      }
+    ],
+    "replyCount": 1,
+    "createdAt": "2026-05-31T12:16:03.564Z",
+    "updatedAt": "2026-05-31T12:16:03.564Z"
+  }
+]

@@ -4,7 +4,6 @@ import { contentDb } from '../storage/db';
 
 export const getAllContent = (req: any, res: Response) => {
   const allContent = contentDb.readAll();
-  const userTierId = req.user?.tierId || null;
   const userRole = req.user?.role || 'guest';
 
   // If admin, return everything
@@ -12,11 +11,17 @@ export const getAllContent = (req: any, res: Response) => {
     return res.json(allContent);
   }
 
-  // Otherwise filter published and appropriate tier
+  // Otherwise filter published only, but return summaries for all (even gated)
+  // This allows the frontend to show gated content with padlocks
   const visible = allContent.filter((c: any) => {
-    if (!c.isPublished) return false;
-    if (c.requiredTierId === null) return true;
-    return c.requiredTierId === userTierId;
+    return c.isPublished;
+  }).map((c: any) => {
+    const summary = { ...c };
+    const userTierId = req.user?.tierId || null;
+    if (summary.requiredTierId && summary.requiredTierId !== userTierId) {
+      delete summary.body;
+    }
+    return summary;
   });
 
   res.json(visible);
