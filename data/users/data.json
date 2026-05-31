@@ -1,24 +1,24 @@
 [
   {
-    "id": "61d4e8ff-4bfc-4ad2-8ab5-671461cdb068",
+    "id": "81a7692a-b9a9-4298-9283-c85013355257",
     "email": "admin@saltedhash.com",
-    "passwordHash": "$2b$10$dxuJpOfdjN.yPB38PvAYHOPjxReXnETvu5XnIVMpFffl4FgOT4IL6",
+    "passwordHash": "$2a$10$WqIp6HWzw.84ODyg7knRlOvcfkiaKTcpbH3BN9K56QLq2OoaPWQzO",
     "role": "admin",
     "firstName": "Admin",
     "lastName": "User",
-    "tierId": null,
-    "createdAt": "2026-05-26T12:15:17.268Z",
-    "updatedAt": "2026-05-26T12:15:17.268Z"
+    "tierId": "premium-tier-id",
+    "createdAt": "2026-05-31T12:16:03.457Z",
+    "updatedAt": "2026-05-31T12:16:03.457Z"
   },
   {
-    "id": "41b04be4-eb76-496f-8cca-555d816a582a",
-    "email": "member@example.com",
-    "passwordHash": "$2b$10$/cmNUdXvO4TbBHmwLXwYBOrgsq.qXGXhY9mEZtVok3Hcln6ER.L9S",
+    "id": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "email": "member@saltedhash.com",
+    "passwordHash": "$2a$10$C9iiffM8EcGw2R4FrvAcJuEntMz5owJMd/acBjfD3BhbwSpzPcA5.",
     "role": "member",
     "firstName": "Sample",
     "lastName": "Member",
-    "tierId": "tier-1",
-    "createdAt": "2026-05-26T12:15:17.374Z",
-    "updatedAt": "2026-05-26T12:15:17.374Z"
+    "tierId": "premium-tier-id",
+    "createdAt": "2026-05-31T12:16:03.561Z",
+    "updatedAt": "2026-05-31T12:16:03.561Z"
   }
 ]

@@ -1,14 +1,26 @@
 [
   {
-    "id": "tier-1",
-    "name": "Urban Gardening Club",
-    "description": "Access to premium gardening guides and community.",
-    "price": 9.99,
+    "id": "basic-tier-id",
+    "name": "Basic Member",
+    "description": "Free basic access.",
+    "price": 0,
+    "features": [
+      "Basic Guides"
+    ],
+    "createdAt": "2026-05-31T12:16:03.336Z",
+    "updatedAt": "2026-05-31T12:16:03.336Z"
+  },
+  {
+    "id": "premium-tier-id",
+    "name": "Premium Member",
+    "description": "Access to premium guides, community, and downloads.",
+    "price": 5,
     "features": [
       "Premium Guides",
-      "Monthly QA"
+      "Community",
+      "Downloads"
     ],
-    "createdAt": "2026-05-26T12:15:17.144Z",
-    "updatedAt": "2026-05-26T12:15:17.145Z"
+    "createdAt": "2026-05-31T12:16:03.337Z",
+    "updatedAt": "2026-05-31T12:16:03.337Z"
   }
 ]

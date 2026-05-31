@@ -1,1 +1,92 @@
-[]
+[
+  {
+    "id": "50ea4b4d-ac67-4e87-ac5a-92489141349c",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "type": "meal",
+    "title": "Weekly Family Meal Plan",
+    "items": [
+      {
+        "id": "ee77420e-2e40-479e-88a8-08cf2e7a596c",
+        "day": "Monday",
+        "meal": "breakfast",
+        "value": "Oatmeal"
+      },
+      {
+        "id": "fca37ad0-a97e-4ea4-b9d6-e288cf9fd546",
+        "day": "Monday",
+        "meal": "lunch",
+        "value": "Salad"
+      },
+      {
+        "id": "9d9657d9-0d28-4665-9de1-3d87a5fb5d42",
+        "day": "Monday",
+        "meal": "dinner",
+        "value": "Pasta"
+      }
+    ],
+    "createdAt": "2026-05-31T12:16:03.563Z",
+    "updatedAt": "2026-05-31T12:16:03.563Z"
+  },
+  {
+    "id": "41d7720d-9792-492d-a889-56963bf62afb",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "type": "garden",
+    "title": "Spring Garden Tasks",
+    "items": [
+      {
+        "id": "604e2fd8-e54f-4e09-8d5a-9a6b0257a823",
+        "plantName": "Tomatoes",
+        "action": "water",
+        "scheduledDate": "2026-05-31",
+        "done": false
+      }
+    ],
+    "createdAt": "2026-05-31T12:16:03.563Z",
+    "updatedAt": "2026-05-31T12:16:03.563Z"
+  },
+  {
+    "id": "test-plan-1780230071755",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-05-31T12:21:11.758Z",
+    "updatedAt": "2026-05-31T12:21:11.758Z"
+  },
+  {
+    "id": "test-plan-1780230322631",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-05-31T12:25:22.634Z",
+    "updatedAt": "2026-05-31T12:25:22.634Z"
+  },
+  {
+    "id": "test-plan-1780230444537",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-05-31T12:27:24.540Z",
+    "updatedAt": "2026-05-31T12:27:24.540Z"
+  },
+  {
+    "id": "test-plan-1780231114904",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-05-31T12:38:34.908Z",
+    "updatedAt": "2026-05-31T12:38:34.908Z"
+  },
+  {
+    "id": "test-plan-1780232442482",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-05-31T13:00:42.485Z",
+    "updatedAt": "2026-05-31T13:00:42.485Z"
+  }
+]
