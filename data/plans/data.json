@@ -88,5 +88,41 @@
     "items": [],
     "createdAt": "2026-05-31T13:00:42.485Z",
     "updatedAt": "2026-05-31T13:00:42.485Z"
+  },
+  {
+    "id": "test-plan-1780417720657",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-06-02T16:28:40.660Z",
+    "updatedAt": "2026-06-02T16:28:40.660Z"
+  },
+  {
+    "id": "test-plan-1780418172535",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-06-02T16:36:12.539Z",
+    "updatedAt": "2026-06-02T16:36:12.539Z"
+  },
+  {
+    "id": "test-plan-1780418199303",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-06-02T16:36:39.305Z",
+    "updatedAt": "2026-06-02T16:36:39.305Z"
+  },
+  {
+    "id": "test-plan-1780418364595",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-06-02T16:39:24.597Z",
+    "updatedAt": "2026-06-02T16:39:24.597Z"
   }
 ]
