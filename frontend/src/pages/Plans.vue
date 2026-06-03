@@ -2,13 +2,28 @@
 import { ref, onMounted } from 'vue';
 import { useOfflineStore } from '../stores/offlineStore';
 import { v4 as uuidv4 } from 'uuid';
+import { apiFetch } from '../services/api';
 
 const offlineStore = useOfflineStore();
 const drafts = ref<any[]>([]);
+const onlinePlans = ref<any[]>([]);
 const newDraftTitle = ref('');
+const loadingOnline = ref(true);
+const errorOnline = ref('');
 
 const loadDrafts = async () => {
   drafts.value = await offlineStore.getDrafts();
+};
+
+const loadOnlinePlans = async () => {
+  try {
+    loadingOnline.value = true;
+    onlinePlans.value = await apiFetch('/plans');
+  } catch (err: any) {
+    errorOnline.value = err.message || 'Failed to load online plans';
+  } finally {
+    loadingOnline.value = false;
+  }
 };
 
 const createDraft = async () => {
@@ -30,8 +45,18 @@ const deleteDraft = async (id: string) => {
   await loadDrafts();
 };
 
+const deleteOnlinePlan = async (id: string) => {
+  try {
+    await apiFetch(`/plans/${id}`, { method: 'DELETE' });
+    await loadOnlinePlans();
+  } catch (err: any) {
+    alert(err.message || 'Failed to delete online plan');
+  }
+};
+
 onMounted(() => {
   loadDrafts();
+  loadOnlinePlans();
 });
 </script>
 
@@ -46,13 +71,29 @@ onMounted(() => {
       </div>
     </div>
 
-    <div>
+    <div class="mb-8">
       <h2 class="font-semibold text-lg mb-4">Local Drafts (Saved Offline)</h2>
       <div v-if="drafts.length === 0" class="text-gray-500 text-sm">No local drafts found.</div>
       <ul class="space-y-3">
-        <li v-for="draft in drafts" :key="draft.id" class="flex justify-between items-center bg-gray-50 p-4 rounded-lg border border-gray-200">
+        <li v-for="draft in drafts" :key="draft.id" class="flex justify-between items-center bg-gray-50 p-4 rounded-lg border border-gray-200 shadow-sm">
           <span class="font-medium text-emerald-900">{{ draft.title }}</span>
           <button @click="deleteDraft(draft.id)" class="text-red-600 text-sm hover:underline">Delete</button>
+        </li>
+      </ul>
+    </div>
+
+    <div>
+      <h2 class="font-semibold text-lg mb-4">Synced Plans (Online)</h2>
+      <div v-if="loadingOnline" class="text-gray-500 text-sm">Loading online plans...</div>
+      <div v-else-if="errorOnline" class="text-red-500 text-sm">{{ errorOnline }}</div>
+      <div v-else-if="onlinePlans.length === 0" class="text-gray-500 text-sm">No synced plans found.</div>
+      <ul v-else class="space-y-3">
+        <li v-for="plan in onlinePlans" :key="plan.id" class="flex justify-between items-center bg-white p-4 rounded-lg border border-emerald-100 shadow-sm">
+          <div class="flex flex-col">
+            <span class="font-medium text-emerald-900">{{ plan.title }}</span>
+            <span class="text-xs text-gray-500 capitalize">{{ plan.type }} Plan &bull; {{ plan.items?.length || 0 }} items</span>
+          </div>
+          <button @click="deleteOnlinePlan(plan.id)" class="text-red-600 text-sm hover:underline">Delete</button>
         </li>
       </ul>
     </div>

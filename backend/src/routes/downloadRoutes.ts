@@ -18,5 +18,11 @@ const softAuth = (req: any, res: any, next: any) => {
 
 router.get('/', softAuth, getAllDownloads);
 router.post('/', requireAuth, requireRole(['admin']), logAdminAction, createDownload);
+router.get('/:id/file', softAuth, (req, res) => {
+  // Mock file download
+  res.setHeader('Content-disposition', 'attachment; filename=download.pdf');
+  res.setHeader('Content-type', 'application/pdf');
+  res.send('Mock PDF Content');
+});
 
 export default router;
