@@ -1,1 +1,37 @@
-[]
+[
+  {
+    "id": "27a17011-4f43-4b97-9e67-662291b70a05",
+    "userId": "sample-user",
+    "title": "Spring Balcony Garden",
+    "type": "garden",
+    "description": "Plan for my spring container garden on the balcony",
+    "items": [
+      "Buy 5-gallon containers for tomatoes",
+      "Purchase organic potting mix",
+      "Start tomato seeds indoors (March 15)",
+      "Set up drip irrigation system",
+      "Install trellis for cucumbers",
+      "Plant herb garden in window boxes"
+    ],
+    "isDraft": false,
+    "createdAt": "2026-06-05T18:22:12.955Z",
+    "updatedAt": "2026-06-05T18:22:12.955Z"
+  },
+  {
+    "id": "3028507e-4062-4055-afa2-9aa8d89775f5",
+    "userId": "sample-user",
+    "title": "Weekly Meal Prep",
+    "type": "meal",
+    "description": "Farm-to-table meal planning with garden-fresh ingredients",
+    "items": [
+      "Harvest tomatoes and basil on Sunday",
+      "Make fresh pesto for the week",
+      "Prepare vegetable stir-fry for Monday dinner",
+      "Pack garden salads for lunch",
+      "Freeze extra herbs in olive oil"
+    ],
+    "isDraft": false,
+    "createdAt": "2026-06-05T18:22:12.956Z",
+    "updatedAt": "2026-06-05T18:22:12.956Z"
+  }
+]

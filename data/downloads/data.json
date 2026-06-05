@@ -1,1 +1,42 @@
-[]
+[
+  {
+    "id": "bf1738aa-b0e6-4ba3-a036-28df692dddbc",
+    "title": "Urban Garden Starter Checklist",
+    "description": "A complete checklist of everything you need to start your urban garden.",
+    "category": "checklist",
+    "downloadUrl": "#",
+    "requiredTierId": null,
+    "createdAt": "2026-06-05T18:22:12.956Z",
+    "updatedAt": "2026-06-05T18:22:12.956Z"
+  },
+  {
+    "id": "6cc6be07-0de6-4997-964e-128bf3a48ab7",
+    "title": "Monthly Garden Planner Template",
+    "description": "Plan your gardening activities month by month with this customizable template.",
+    "category": "template",
+    "downloadUrl": "#",
+    "requiredTierId": null,
+    "createdAt": "2026-06-05T18:22:12.963Z",
+    "updatedAt": "2026-06-05T18:22:12.963Z"
+  },
+  {
+    "id": "51052a7f-c7bf-49f8-82f8-942808c02590",
+    "title": "Companion Planting Guide",
+    "description": "Know which plants grow well together and which to keep apart.",
+    "category": "guide",
+    "downloadUrl": "#",
+    "requiredTierId": "tier-1",
+    "createdAt": "2026-06-05T18:22:12.967Z",
+    "updatedAt": "2026-06-05T18:22:12.967Z"
+  },
+  {
+    "id": "35130711-2dd4-47a4-bf00-b6e8267df38c",
+    "title": "Seasonal Harvest Calendar",
+    "description": "Know when to expect your harvest based on your planting schedule.",
+    "category": "calendar",
+    "downloadUrl": "#",
+    "requiredTierId": "tier-1",
+    "createdAt": "2026-06-05T18:22:12.968Z",
+    "updatedAt": "2026-06-05T18:22:12.968Z"
+  }
+]

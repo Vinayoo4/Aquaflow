@@ -1,37 +1,78 @@
 [
   {
-    "id": "29b7f852-2cc6-442d-922f-d6f3a8bf2a9a",
+    "id": "a9a10d79-12d3-4982-ab57-d305c239b9e4",
     "type": "guide",
     "title": "Getting Started with Balcony Tomatoes",
     "slug": "getting-started-balcony-tomatoes",
-    "excerpt": "Learn the basics of growing tomatoes in small spaces.",
-    "body": "Tomatoes need plenty of sunlight. Start with a 5-gallon container...",
+    "excerpt": "Learn the basics of growing delicious tomatoes in small urban spaces. From container selection to harvesting.",
+    "body": "Growing tomatoes on a balcony is one of the most rewarding urban gardening experiences. Here's everything you need to know to get started.\n\n## Choosing Your Containers\nTomatoes need plenty of room for their roots. Start with a 5-gallon container at minimum. Ensure your pots have drainage holes — tomatoes hate sitting in water.\n\n## Soil Selection\nUse a high-quality potting mix, not garden soil. Look for a mix that includes perlite or vermiculite for drainage and peat moss or coconut coir for moisture retention.\n\n## Sunlight Requirements\nTomatoes are sun-lovers. They need at least 6-8 hours of direct sunlight daily. If your balcony is shaded, consider growing cherry tomatoes, which are more tolerant of partial shade.\n\n## Watering Schedule\nConsistency is key. Water deeply when the top inch of soil feels dry. In hot weather, this may mean daily watering. Always water at the base to prevent leaf diseases.\n\n## Feeding Your Plants\nTomatoes are heavy feeders. Use a balanced, slow-release fertilizer when planting, then switch to a phosphorus-rich fertilizer once flowers appear to encourage fruit development.\n\n## Support Structures\nAs your tomato plants grow, they'll need support. Use cages, stakes, or a trellis system to keep plants upright and improve air circulation.\n\n## Harvesting\nPick tomatoes when they're fully colored and slightly soft to the touch. Regular harvesting encourages more fruit production.\n\nHappy growing!",
     "tags": [
       "gardening",
       "tomatoes",
-      "urban"
+      "urban",
+      "beginner"
     ],
     "isPublished": true,
-    "publishedAt": "2026-05-26T12:15:17.374Z",
+    "publishedAt": "2026-06-05T18:22:12.951Z",
     "requiredTierId": null,
-    "createdAt": "2026-05-26T12:15:17.374Z",
-    "updatedAt": "2026-05-26T12:15:17.374Z"
+    "createdAt": "2026-06-05T18:22:12.951Z",
+    "updatedAt": "2026-06-05T18:22:12.951Z"
   },
   {
-    "id": "2e09291c-3b52-447e-9500-cec6e060895e",
+    "id": "32a42837-3b82-4977-b1a1-da6fee483d3c",
     "type": "guide",
     "title": "Advanced Pruning Techniques",
     "slug": "advanced-pruning-techniques",
-    "excerpt": "Maximize your yield with proper pruning.",
-    "body": "Identify suckers and remove them early in the season...",
+    "excerpt": "Maximize your yield with proper pruning techniques. Learn to identify suckers, manage growth, and improve air circulation.",
+    "body": "Pruning is one of the most important skills for maximizing your garden's productivity. Proper pruning leads to larger fruits, better air circulation, and reduced disease pressure.\n\n## Why Prune?\nPruning directs the plant's energy into fruit production rather than leaf growth. It also improves air circulation, reducing the risk of fungal diseases.\n\n## Identifying Suckers\nSuckers are small shoots that grow in the crotch between the stem and a branch. Remove them early when they're small and easy to pinch off.\n\n## The Two Schools: Determinate vs Indeterminate\nDeterminate (bush) tomatoes need minimal pruning — just remove suckers below the first flower cluster. Indeterminate (vining) tomatoes benefit from more aggressive pruning.\n\n## When to Prune\nPrune in the morning when plants are turgid. Use clean, sharp pruners. Remove no more than 1/3 of the plant's foliage at a time.\n\n## The Missouri Pruning Method\nFor indeterminate varieties, pinch off just the tip of the sucker, leaving a few leaves. This provides some photosynthesis while controlling growth.\n\n## Beyond Tomatoes\nThese same principles apply to peppers, eggplants, and many other garden vegetables.\n\nMaster these techniques and you'll see a dramatic improvement in your harvest quality and quantity.",
     "tags": [
       "gardening",
-      "advanced"
+      "advanced",
+      "pruning",
+      "techniques"
     ],
     "isPublished": true,
-    "publishedAt": "2026-05-26T12:15:17.375Z",
+    "publishedAt": "2026-06-05T18:22:12.951Z",
     "requiredTierId": "tier-1",
-    "createdAt": "2026-05-26T12:15:17.375Z",
-    "updatedAt": "2026-05-26T12:15:17.375Z"
+    "createdAt": "2026-06-05T18:22:12.951Z",
+    "updatedAt": "2026-06-05T18:22:12.951Z"
+  },
+  {
+    "id": "0e65cd97-483e-4c17-b97e-d288b9bdc543",
+    "type": "guide",
+    "title": "Herbal Remedies for Common Ailments",
+    "slug": "herbal-remedies-common-ailments",
+    "excerpt": "Discover natural remedies using herbs you can grow in your own urban garden.",
+    "body": "Nature provides powerful medicine right in your backyard. Here's a guide to growing and using common medicinal herbs.\n\n## Peppermint for Digestion\nEasy to grow in containers, peppermint tea soothes digestive issues. Steep fresh leaves in hot water for 5-7 minutes.\n\n## Lavender for Stress Relief\nLavender's calming aroma makes it perfect for sleep support. Dry the flowers for sachets or steep for tea.\n\n## Echinacea for Immune Support\nThis beautiful purple coneflower boosts immune function. Use the roots and flowers to make a tea at the first sign of a cold.\n\n## Calendula for Skin\nCalendula flowers make a soothing salve for minor cuts and skin irritations. Infuse the petals in carrier oil for a week.\n\n## Growing Your Medicine Cabinet\nMost medicinal herbs are easy to grow in containers on a balcony or windowsill. They need well-draining soil and at least 4-6 hours of sunlight.\n\nAlways consult with a healthcare provider before using herbal remedies, especially if you're taking medications.",
+    "tags": [
+      "herbal",
+      "remedies",
+      "health",
+      "wellness"
+    ],
+    "isPublished": true,
+    "publishedAt": "2026-06-05T18:22:12.951Z",
+    "requiredTierId": null,
+    "createdAt": "2026-06-05T18:22:12.951Z",
+    "updatedAt": "2026-06-05T18:22:12.951Z"
+  },
+  {
+    "id": "e7d8eff6-6ff9-4daa-860e-674fd0ea5991",
+    "type": "guide",
+    "title": "Seasonal Planting Calendar",
+    "slug": "seasonal-planting-calendar",
+    "excerpt": "A comprehensive guide to what to plant and when, organized by season and climate zone.",
+    "body": "Knowing when to plant is half the battle in gardening. This guide helps you plan your growing season.\n\n## Spring (March-May)\nStart seeds indoors: Tomatoes, peppers, eggplants (8 weeks before last frost)\nDirect sow: Peas, spinach, lettuce, carrots, radishes\nTransplant: Broccoli, cabbage, cauliflower\n\n## Summer (June-August)\nPlant heat-lovers: Basil, beans, corn, cucumbers, melons, squash\nSuccession plant: Lettuce, radishes, beans (every 2-3 weeks)\nHarvest: Berries, tomatoes, peppers, zucchini\n\n## Fall (September-November)\nCool-season crops: Broccoli, Brussels sprouts, kale, carrots\nGarlic planting: Plant cloves 4-6 weeks before ground freezes\nCover crops: Winter rye, hairy vetch for soil building\n\n## Winter (December-February)\nIndoor projects: Start planning, order seeds, build indoor herb garden\nForce bulbs: Paperwhites, amaryllis for winter blooms\nMaintain: Clean and sharpen tools, organize seed storage\n\n## Climate Zone Adjustments\nAdjust these dates based on your local frost dates. Your county extension service can provide specific recommendations for your area.\n\nKeep a garden journal to track your specific microclimate patterns year after year.",
+    "tags": [
+      "seasonal",
+      "planning",
+      "calendar",
+      "organization"
+    ],
+    "isPublished": true,
+    "publishedAt": "2026-06-05T18:22:12.953Z",
+    "requiredTierId": "tier-1",
+    "createdAt": "2026-06-05T18:22:12.953Z",
+    "updatedAt": "2026-06-05T18:22:12.953Z"
   }
 ]

@@ -10,6 +10,7 @@ const router = createRouter({
     { path: '/guides/:id', name: 'GuideDetail', component: () => import('../pages/GuideDetail.vue') },
     { path: '/plans', name: 'Plans', component: () => import('../pages/Plans.vue'), meta: { requiresAuth: true } },
     { path: '/downloads', name: 'Downloads', component: () => import('../pages/Downloads.vue') },
+    { path: '/community', name: 'Community', component: () => import('../pages/Community.vue'), meta: { requiresAuth: true } },
     { path: '/admin', name: 'Admin', component: () => import('../pages/Admin.vue'), meta: { requiresAdmin: true } },
   ],
 });

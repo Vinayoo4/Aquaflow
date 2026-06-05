@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "main": "src/server.ts",
   "scripts": {
-    "start": "ts-node src/server.ts",
-    "dev": "nodemon src/server.ts",
+    "start": "node --experimental-specifier-resolution=node --loader ts-node/esm src/server.ts",
+    "dev": "nodemon --exec ts-node src/server.ts",
     "seed": "ts-node src/run-seed.ts"
   },
   "dependencies": {

@@ -1,18 +1,13 @@
 import fs from 'fs';
 import path from 'path';
 
-// Using __dirname properly for a nested repo structure:
-// __dirname = /app/backend/src/storage
-// App root is /app
-const DATA_DIR = path.resolve(__dirname, '../../../../data'); // this goes to /data which is root, bad.
-// We want /app/data
-const CORRECT_DATA_DIR = path.join(__dirname, '../../../data');
+const DATA_DIR = process.env.DATA_DIR || path.resolve(__dirname, '../../../data');
 
 export class JsonStorage<T extends { id: string }> {
   private collectionPath: string;
 
   constructor(collectionName: string) {
-    this.collectionPath = path.join(CORRECT_DATA_DIR, collectionName, 'data.json');
+    this.collectionPath = path.join(DATA_DIR, collectionName, 'data.json');
     this.ensureFile();
   }
 
@@ -27,8 +22,8 @@ export class JsonStorage<T extends { id: string }> {
   }
 
   public readAll(): T[] {
-    const data = fs.readFileSync(this.collectionPath, 'utf8');
     try {
+      const data = fs.readFileSync(this.collectionPath, 'utf8');
       return JSON.parse(data) as T[];
     } catch (e) {
       return [];
@@ -55,7 +50,6 @@ export class JsonStorage<T extends { id: string }> {
     const all = this.readAll();
     const index = all.findIndex((item) => item.id === id);
     if (index === -1) return null;
-
     all[index] = { ...all[index], ...updates };
     this.writeAll(all);
     return all[index];
