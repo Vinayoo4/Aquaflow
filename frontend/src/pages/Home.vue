@@ -10,5 +10,23 @@
         <router-link to="/guides" class="bg-emerald-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-emerald-700 shadow-md transition">Explore Guides</router-link>
       </div>
     </section>
+
+    <section class="grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 class="text-xl font-bold text-emerald-900 mb-2">Gardening Guides</h3>
+        <p class="text-gray-600 mb-4">Expert tips on growing vegetables, herbs, and flowers in urban spaces.</p>
+        <router-link to="/guides" class="text-emerald-600 font-semibold hover:underline">Read more &rarr;</router-link>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 class="text-xl font-bold text-emerald-900 mb-2">Meal Planning</h3>
+        <p class="text-gray-600 mb-4">Organize your weekly meals and gardening tasks in one place.</p>
+        <router-link to="/plans" class="text-emerald-600 font-semibold hover:underline">Start planning &rarr;</router-link>
+      </div>
+      <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+        <h3 class="text-xl font-bold text-emerald-900 mb-2">Community</h3>
+        <p class="text-gray-600 mb-4">Connect with fellow enthusiasts, share your progress, and ask questions.</p>
+        <router-link to="/community" class="text-emerald-600 font-semibold hover:underline">Join discussion &rarr;</router-link>
+      </div>
+    </section>
   </div>
 </template>

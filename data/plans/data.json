@@ -124,5 +124,14 @@
     "items": [],
     "createdAt": "2026-06-02T16:39:24.597Z",
     "updatedAt": "2026-06-02T16:39:24.597Z"
+  },
+  {
+    "id": "test-plan-1781147767359",
+    "userId": "6815a462-8b78-409b-a4dc-4bbd4049763e",
+    "title": "Test API Plan",
+    "type": "garden",
+    "items": [],
+    "createdAt": "2026-06-11T03:16:07.364Z",
+    "updatedAt": "2026-06-11T03:16:07.364Z"
   }
 ]

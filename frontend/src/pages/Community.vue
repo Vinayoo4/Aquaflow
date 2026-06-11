@@ -150,7 +150,8 @@ onMounted(() => {
       <div v-if="loading" class="text-center py-12 text-gray-500">Loading posts...</div>
       <div v-else-if="error" class="text-red-500">{{ error }}</div>
       <div v-else-if="posts.length === 0" class="text-center py-12 bg-white rounded-xl border border-gray-100 text-gray-500">
-        No posts yet. Be the first to start a discussion!
+        <h2 class="text-xl font-bold text-emerald-900 mb-2">No posts yet</h2>
+        <p>Be the first to start a discussion!</p>
       </div>
 
       <div v-else class="space-y-4">

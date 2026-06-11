@@ -1,10 +1,12 @@
 import { Router } from 'express';
-import { getPosts, createPost } from '../controllers/communityController';
+import { getPosts, getPostById, createPost, createReply } from '../controllers/communityController';
 import { requireAuth } from '../middleware/authMiddleware';
 
 const router = Router();
 
-router.get('/', requireAuth, getPosts);
+router.get('/', getPosts);
+router.get('/:id', getPostById);
 router.post('/', requireAuth, createPost);
+router.post('/:id/reply', requireAuth, createReply);
 
 export default router;
