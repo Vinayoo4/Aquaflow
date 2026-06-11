@@ -24,7 +24,7 @@ const downloadFile = async (id: string) => {
     if (authStore.token) {
       headers.set('Authorization', `Bearer ${authStore.token}`);
     }
-    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || ''}/api/downloads/${id}/file`, { headers });
+    const response = await fetch(`${import.meta.env.VITE_API_BASE_URL || '/api'}/downloads/${id}/file`, { headers });
 
     if (!response.ok) {
       throw new Error(`Failed to download file: ${response.statusText}`);
@@ -53,7 +53,10 @@ const downloadFile = async (id: string) => {
 
     <div v-if="loading" class="text-gray-500">Loading resources...</div>
     <div v-else-if="error" class="text-red-500">{{ error }}</div>
-    <div v-else-if="downloads.length === 0" class="text-gray-500">No resources available yet.</div>
+    <div v-else-if="downloads.length === 0" class="text-center py-12 bg-white rounded-xl border border-gray-100 text-gray-500">
+      <h2 class="text-xl font-bold text-emerald-900 mb-2">No resources available yet</h2>
+      <p>Check back later for new downloadable content.</p>
+    </div>
     <div v-else class="grid grid-cols-1 md:grid-cols-2 gap-6">
       <div v-for="dl in downloads" :key="dl.id" class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 flex flex-col h-full">
         <h2 class="text-xl font-semibold text-emerald-900 mb-2">{{ dl.title }}</h2>

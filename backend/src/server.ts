@@ -1,6 +1,7 @@
 import express from 'express';
 import path from 'path';
 import cors from 'cors';
+import fs from 'fs';
 import authRoutes from './routes/authRoutes';
 import contentRoutes from './routes/contentRoutes';
 import membershipRoutes from './routes/membershipRoutes';
@@ -24,12 +25,24 @@ app.use('/api/admin', adminRoutes);
 // Health check
 app.get('/api/health', (req, res) => res.json({ status: 'ok' }));
 
+// 404 for any unmatched /api routes
+app.use('/api', (req, res) => {
+  res.status(404).json({ success: false, error: 'API route not found' });
+});
+
+// 500 handler for API errors
+app.use('/api', (err: any, req: express.Request, res: express.Response, next: express.NextFunction) => {
+  console.error(err.stack);
+  res.status(500).json({ success: false, error: 'Internal Server Error' });
+});
+
 app.use(express.static(path.join(__dirname, '../../frontend/dist')));
 app.use((req, res, next) => {
-  if (req.path.startsWith('/api')) {
-    next();
+  const indexPath = path.join(__dirname, '../../frontend/dist/index.html');
+  if (fs.existsSync(indexPath)) {
+    res.sendFile(indexPath);
   } else {
-    res.sendFile(path.join(__dirname, '../../frontend/dist/index.html'));
+    res.status(404).send('Frontend not built');
   }
 });
 

@@ -1,11 +1,6 @@
 import fs from 'fs';
 import path from 'path';
 
-// Using __dirname properly for a nested repo structure:
-// __dirname = /app/backend/src/storage
-// App root is /app
-const DATA_DIR = path.resolve(__dirname, '../../../../data'); // this goes to /data which is root, bad.
-// We want /app/data
 const CORRECT_DATA_DIR = path.join(__dirname, '../../../data');
 
 export class JsonStorage<T extends { id: string }> {

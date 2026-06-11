@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue';
 import { useAuthStore } from '../stores/auth';
+import { apiFetch } from '../services/api';
 
 const guides = ref<any[]>([]);
 const auth = useAuthStore();
@@ -10,8 +11,8 @@ onMounted(async () => {
   try {
     const headers: any = {};
     if (auth.token) headers['Authorization'] = `Bearer ${auth.token}`;
-    const res = await fetch('/api/content', { headers });
-    guides.value = await res.json();
+    const res = await apiFetch('/content', { headers });
+    guides.value = res;
   } catch (err) {
     console.error(err);
   } finally {

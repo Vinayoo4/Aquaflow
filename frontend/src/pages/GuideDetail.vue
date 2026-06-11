@@ -2,6 +2,7 @@
 import { ref, onMounted } from 'vue';
 import { useRoute } from 'vue-router';
 import { useAuthStore } from '../stores/auth';
+import { apiFetch } from '../services/api';
 
 const route = useRoute();
 const auth = useAuthStore();
@@ -12,14 +13,14 @@ onMounted(async () => {
   try {
     const headers: any = {};
     if (auth.token) headers['Authorization'] = `Bearer ${auth.token}`;
-    const res = await fetch(`/api/content/${route.params.id}`, { headers });
-    if (!res.ok) {
-      if (res.status === 403) throw new Error('Membership required to view this guide.');
-      throw new Error('Guide not found');
-    }
-    guide.value = await res.json();
+    const res = await apiFetch(`/content/${route.params.id}`, { headers });
+    guide.value = res;
   } catch (err: any) {
-    error.value = err.message;
+    if (err.status === 403) {
+      error.value = 'Membership required to view this guide.';
+    } else {
+      error.value = err.message || 'Guide not found';
+    }
   }
 });
 </script>
@@ -35,7 +36,7 @@ onMounted(async () => {
       <div class="flex gap-2 mb-8 border-b border-gray-100 pb-4">
         <span v-for="tag in guide.tags" :key="tag" class="text-xs bg-gray-100 text-gray-600 px-2 py-1 rounded-full">{{ tag }}</span>
       </div>
-      <div class="prose prose-emerald max-w-none text-gray-700">
+      <div class="prose prose-emerald max-w-none text-gray-700 whitespace-pre-wrap">
         {{ guide.body }}
       </div>
     </article>
